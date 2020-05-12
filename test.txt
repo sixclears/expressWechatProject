@@ -1,4 +1,4 @@
 This is the test txt!
 you can read it!
 add data:
-i edit it now,i can see the change of gitStatus!
+i edit it now,i can see the change of gitStatus!+master modify it
