@@ -2,3 +2,4 @@ This is the test txt!
 you can read it!
 add data:
 i edit it now,i can see the change of gitStatus!+master modify it
+i edit it now,i can see the change of gitStatus!+hot_fix modify it
