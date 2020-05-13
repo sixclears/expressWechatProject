@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: pwd3306
+    url: jdbc:mysql://121.43.227.147/bysl
+  redis:
+    host: 121.43.227.147
+
+
+wechat:
+ mini-app:
+  app-id: wx64d75acc798acb22
+  app-secret: 462e1d5fe78d11766403f047bab08e80
+mybatis:
+  config-location: classpath:mytbatis/mybatis.xml
+  mapper-locations: classpath:mytbatis/DainaMapper.xml
+
+
