@@ -1,0 +1,61 @@
+<!--pages/loadEdit/loadEdit.wxml-->
+<view class='main'>
+    <!-- 物品信息备注 -->
+  <view class='remarks' style='height:{{remark_height}}rpx'>
+    <view class='list'>
+      <view class='list_name'>物品信息备注</view>
+        <input class='inputInfo' bindinput="updateedit" data-item="tip" value="{{order.tip}}"></input>
+        <image class='editPic' src='../../../../images/edit.png'></image>
+    </view>
+  </view>
+    <!-- 其他信息 -->
+    <view class='else'>
+      <view class='lists'>
+        <view class='list_name'>物流公司</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="expressType"  value="{{order.expressType}}"></input>
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      <view class='lists'>
+        <view class='list_name'>物流单号</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="expressNumber" value="{{order.expressNumber}}"></input> 
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      <view class='lists'>
+        <view class='list_name'>收件人姓名</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="name"  value="{{order.name}}"></input> 
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      <view class='lists'>
+        <view class='list_name'>联系方式</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="tel"  value="{{order.tel}}"></input> 
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      <view class='lists'>
+        <view class='list_name'>驿站地址</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="address"  value="{{order.address}}"></input> 
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      <view class='lists'>
+        <view class='list_name'>收货地址</view>
+        <view class='list_items'>
+          <input class='inputInfo' bindinput="updateedit" data-item="myAddress"  value="{{order.myAddress}}"></input> 
+          <image class='editPic' src='../../../../images/edit.png'></image>
+        </view>
+      </view>
+      
+    </view>
+    <!-- 提交修改 -->
+    <view class='confirm'>
+      <button class='confirmBtn' bindtap="updateorder">提交修改</button>
+    </view>
+</view>

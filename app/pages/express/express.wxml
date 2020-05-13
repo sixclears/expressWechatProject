@@ -1,0 +1,98 @@
+<view class = "section">
+<!--选择寄件人地址-->
+      <view class='step_top'>
+        <view class='flag'>STEP1</view>
+      </view>
+  <view class = "addre1" bindtap = "toChooseAddre" style="display:{{display1_j}} " data-item="1">
+    <view class = "left">
+      <image src="../../images/map.jpg" 
+      mode = "widthFix"/><text class = "red">　选择寄件人地址</text>
+    </view>
+    <view class = "right">
+        <image class="more" src = "../../images/right.png"
+      mode = "widthFix" />
+    </view>
+  </view>
+
+<view class = "addre1 addre2" bindtap = "toChooseAddre"  style="display:{{display2_j}}" >
+  <view class = "left">
+  <view class="left_top">
+  <image src="../../images/map2.png" 
+    mode = "widthFix"/>
+    {{name_j}}　{{tel_j}}
+    </view>
+    <view class = "left_bottom">
+      地址：{{addre_j}}
+    </view>
+  </view>
+  <view class = "right">
+    <image class="more" src = "../../images/right.png"
+    mode = "widthFix" />
+  </view>
+</view>
+<view class = "line"><image src = "../../images/line.jpg" mode="aspectFit" repeat = "repeat"/></view>
+<!--选择收件人地址-->
+<view class='step_top'>
+        <view class='flag'>STEP2</view>
+      </view>
+<view class = "addre1" bindtap = "toChooseAddre" style="display:{{display1_s}}" data-item="2">
+    <view class = "left">
+      <image src="../../images/map.jpg" 
+      mode = "widthFix"/><text class = "red">　选择收件人地址</text>
+    </view>
+    <view class = "right">
+        <image class="more" src = "../../images/right.png"
+      mode = "widthFix" />
+    </view>
+  </view>
+
+<view class = "addre1 addre2" bindtap = "toChooseAddre"  style="display:{{display2_s}}">
+  <view class = "left">
+  <view class="left_top">
+  <image src="../../images/map2.png" 
+    mode = "widthFix"/>
+    {{name_s}}　{{tel_s}}
+    </view>
+    <view class = "left_bottom">
+      地址：{{addre_s}}
+    </view>
+  </view>
+  <view class = "right">
+    <image class="more" src = "../../images/right.png"
+    mode = "widthFix" />
+  </view>
+</view>
+<view class = "line"><image src = "../../images/line.jpg" mode="aspectFit" repeat = "repeat"/></view>
+<!--取件时间-->
+<view class='step_top'>
+        <view class='flag'>STEP3</view>
+      </view>
+<view class = "item">
+  <view class = "left">
+    服务时间
+  </view>
+  <view class = "right">
+    <picker name="date" mode="date" value="{{dateValue}}" start="2017-05-19" end="2100-12-12" bindchange="datePickerBindchange">
+  {{dateValue}}
+</picker>　
+<picker name="time" mode="time" value="{{timeValue}}" start="08:00" end="18:00" bindchange="timePickerBindchange">
+  {{timeValue}}
+  </picker>
+  </view>
+</view>
+
+<view class = "item">
+  <view class = "left">
+    可选服务
+  </view>
+  <view class = "right">
+  <checkbox-group name ="marks">
+     <label class="checkbox" wx:for="{{marks}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}" color="#FFC800"/>{{item.value}}
+  </label>
+  </checkbox-group>
+  </view>
+</view>
+
+</view>
+<button class = "submit"  bindtap="formSubmit">立即预约</button>

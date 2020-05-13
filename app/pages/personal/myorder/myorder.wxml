@@ -1,0 +1,66 @@
+<!--pages/goods/goods.wxml-->
+<view class="swiper-tab">  
+    <view class="tab-item {{currentIndex1?'active':''}} "  bindtap="currentIndex1">未被代取({{loadNum}})</view>
+    <view class="tab-item {{currentIndex3?'active':''}}"  bindtap="currentIndex3">等待收货({{inNum}})</view>
+    <view class="tab-item {{currentIndex4?'active':''}}"  bindtap="currentIndex4">已完成({{finishNum}})</view> 
+</view>
+<view class='tab-items'>
+    <view class='kong {{kong2?"kong2":""}}'></view>  
+    <!-- 未被代取 -->  
+    <view class='{{currentIndex1?"show":"hidden"}}'>
+      <view class='list' wx:for="{{loadList}}" wx:for-item="item" wx:key='id'>
+        <view class='list_top'>
+          <view class='numAndTime'>
+            <image class='numPic' src='../../../images/moren.png'></image>
+            <view  class='numInfo'>
+              <view class='num'>物流单号:{{item.expressNumber}}</view>
+            </view>
+          </view>
+          <view class='state'>未被代取</view>
+        </view>
+        <view class='hr'></view>
+        <view class='loadBtn'>
+          <view class='see_btn' data-item="{{item.id}}" bindtap='loadDetails'>查看详情</view>
+          <view class='edit_btn' data-item="{{item.id}}" bindtap='loadEdit'>修改信息</view>
+        </view>
+      </view>
+    </view>
+    <!-- 等待收货 -->  
+    <view class='{{currentIndex3?"show":"hidden"}}'>
+      <view class='list' wx:for="{{outList}}" wx:key='id' wx:for-item="item">
+        <view class='list_top'>
+          <view class='numAndTime'>
+            <image class='numPic' src='../../../images/moren.png'></image>
+            <view  class='numInfo'>
+              <view class='num'>物流单号:{{item.expressNumber}}</view>
+            </view>
+          </view>
+          <view class='state'>等待收货</view>
+        </view>
+        <view class='hr'></view>
+        <view class='outBtn'>
+          <view class='see_btn' data-item="{{item.id}}" catchtap='loadDetails'>查看详情</view>
+          <view class='confirm_btn' bindtap="sureget" data-item="{{item.id}}">确认收货</view>
+        </view>
+      </view>
+    </view>
+    <!-- 已完成 -->  
+    <view class='{{currentIndex4?"show":"hidden"}}'>
+      <view class='list' wx:for="{{finishList}}" wx:key='{{item.id}}' wx:for-item="item">
+        <view class='list_top'>
+          <view class='numAndTime'>
+            <image class='numPic' src='../../../images/moren.png'></image>
+            <view  class='numInfo'>
+              <view class='num'>物流单号:{{item.expressNumber}}</view>
+            </view>
+          </view>
+          <view class='state'>已收货</view>
+        </view>
+        <view class='hr'></view>
+        <view class='finishBtn'>
+          <view class='see_btn' bindtap='loadDetails' data-item="{{item.id}}">查看详情</view>
+          <view class='del_btn' data-item="{{item.id}}" bindtap='delOrder'>删除订单</view>
+        </view>
+      </view> 
+    </view>
+</view>

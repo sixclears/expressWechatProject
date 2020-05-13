@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/detail/detail",
+    "pages/daina/daina",
+    "pages/express/express",
+    "pages/myexpress/myexpress",
+    "pages/personal/address/address",
+    "pages/order/order",
+    "pages/personal/myorder/myorder",
+    "pages/personal/daina/daina",
+    "pages/personal/myorder/details/details",
+    "pages/personal/myorder/updateorder/updateorder",
+    "pages/personal/daina/details/details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#EF6262",
+    "navigationBarTitleText": "快递帮",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#323232",
+    "selectedColor": "#EF6262",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "查快递",
+        "iconPath": "images/express.png",
+        "selectedIconPath": "images/express_select.png"
+      },
+      {
+        "pagePath": "pages/express/express",
+        "text": "寄快递",
+        "iconPath": "images/manager.png",
+        "selectedIconPath": "images/manager_select.png"
+      },
+      {
+        "pagePath": "pages/daina/daina",
+        "text": "代拿快递",
+        "iconPath": "images/daina.png",
+        "selectedIconPath": "images/daina_select.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user _select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

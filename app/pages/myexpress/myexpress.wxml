@@ -1,0 +1,20 @@
+<view class="explain-line">
+  <view class="explain-block"></view>
+  <view class="explain-text">我的快递</view>
+</view>
+
+<view class="myexpress">
+  <view class="item-express" wx:for="{{expressList}}" data-expressnumber="{{item.expressNumber}}" data-expressname="{{item.expressName}}" data-expresscode="{{item.expressCode}}" bindtap="showDetail">
+    <view class="logo">
+      <image src="{{item.logoSrc}}"></image>
+    </view>
+    <view class="detail">
+      <view class="express-detail">
+        <view class="name">{{item.expressName}}</view>
+        <view class="order">{{item.expressNumber}}</view>
+      </view>
+      <view class="lastStatus">{{item.lastInfo.status}}</view>
+      <view class="lastDate">{{item.lastInfo.time}}</view>
+    </view>
+  </view>
+</view>

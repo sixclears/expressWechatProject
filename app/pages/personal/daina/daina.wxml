@@ -1,0 +1,68 @@
+<!--pages/goods/goods.wxml-->
+<view class="swiper-tab">  
+    <view class="tab-item {{currentIndex1?'active':''}} "  bindtap="currentIndex1">等待帮拿快递({{loadNum}})</view>
+    <view class="tab-item {{currentIndex2?'active':''}}"  bindtap="currentIndex2">我的接单({{inNum}})</view>
+    <view class="tab-item {{currentIndex4?'active':''}}"  bindtap="currentIndex4">已完成({{finishNum}})</view> 
+</view>
+<view class='tab-items'>
+    <view class='kong {{kong2?"kong2":""}}'></view>  
+    <!-- 等待帮拿快递 -->  
+    <view class='{{currentIndex1?"show":"hidden"}}'>
+      <view class='list' wx:for="{{loadList}}" wx:for-item="item" wx:key='id'>
+        <view class='list_top'>
+          <view class='numAndTime'>
+            <image class='numPic' src='../../../images/moren.png'></image>
+            <view  class='numInfo'>
+              <view class='num'>送达地址:{{item.myAddress}}</view>
+              <view class='time'>佣金:{{item.salary}}元</view>
+            </view>
+          </view>
+          <view class='state'>待帮拿</view>
+        </view>
+        <view class='hr'></view>
+        <view class='loadBtn'>
+          <view class='edit_btn' data-item="{{item.id}}" bindtap='loadEdit'>帮拿</view>
+        </view>
+      </view>
+    </view>
+    <!-- 我的接单 -->  
+    <view class='{{currentIndex2?"show":"hidden"}}'>
+    <view class='list' wx:for="{{inList}}" wx:for-item="item" wx:key='id'>
+        <view class='list'>
+          <view class='list_top'>
+            <view class='numAndTime'>
+              <image class='numPic' src='../../../images/moren.png'></image>
+              <view  class='numInfo'>
+                <view class='num'>送货地址:{{item.myAddress}}</view>
+                <view class='time'>佣金:{{item.salary}}元</view>
+              </view>
+            </view>
+            <view class='state'>等待送递</view>
+          </view>
+          <view class='hr'></view>
+          <view class='inBtn'>
+            <view class='see_btn' data-item="{{item.id}}" bindtap='inDetails'>查看详情</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 已完成 -->  
+    <view class='{{currentIndex4?"show":"hidden"}}'>
+      <view class='list' wx:for="{{finishList}}" wx:key='{{item.id}}' wx:for-item="item">
+        <view class='list_top'>
+          <view class='numAndTime'>
+            <image class='numPic' src='../../../images/moren.png'></image>
+            <view  class='numInfo'>
+              <view class='num'>送递地址:{{item.myAddress}}</view>
+              <view class='time'>赚取佣金:{{item.salary}}</view>
+            </view>
+          </view>
+          <view class='state'>已送达</view>
+        </view>
+        <view class='hr'></view>
+        <view class='finishBtn'>
+          <view class='see_btn' data-item="{{item.id}}" bindtap='inDetails'>查看详情</view>
+        </view>
+      </view> 
+    </view>
+</view>

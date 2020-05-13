@@ -1,0 +1,14 @@
+/* pages/user/address/address.wxss */
+.c-list{
+  background: #fff;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.list{
+  border-top:solid 2rpx #eee;
+  margin: 20rpx 30rpx;
+}
+.list:first-child{
+   border-top:0rpx;
+}

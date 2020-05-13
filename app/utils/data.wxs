@@ -1,0 +1,149 @@
+/**
+ * 从缓存中获取已选数量
+ * num meal的mid
+ * array 已选的数列
+ */
+function conData(num, array) {
+  var s = 0;//显示个数
+  array.forEach(function (arr){
+    if (arr.mealId == num){
+      s = arr.num;
+    }
+  });
+  return s;
+}
+/**
+ * @time 传入s
+ * @timeStr返回时间
+ */
+function timer(timer){
+  if (timer > 0) {
+    var hour = 0, min = 0, sec = 0;
+    //计算出小时
+    hour = parseInt(timer / (60 * 60)); 
+    hour = (hour.toString()).length > 1 ? hour : ("0" + hour.toString());
+
+    
+    // 计算出分钟
+    min = parseInt((timer - hour * 3600) / 60);
+    min = (min.toString()).length > 1 ? min : ("0" + min.toString());
+    // 计算出秒数
+    sec = parseInt(timer - hour * 3600 - min * 60);
+    sec = (sec.toString()).length > 1 ? sec : ("0" + sec.toString());
+    return hour + ":" + min + ":" + sec;
+  } else {
+    return "";
+  }
+}
+/**
+ * 合并地址对象为字符串
+ */
+function mergeString(it){
+  return it.name + "-" + it.tel + "-" + it.address;
+}
+/**
+ * 算多少钱
+ */
+function totalPrice(selected) {
+  var price = parseFloat(0.00);
+  for (var i = 0; i < selected.length;i++){
+    price = formatFloat(price+selected[i].price * selected[i].num,2);
+  }
+  return price;
+}
+/**
+ * 判断当前时间以及是否禁用
+ * time 要比对时间
+ * type 早 0 中1 晚2
+ */
+function checkTime(time,type){
+  // var zao = "03:22";
+  // var wu =  "11:30";
+  // var wan = "18:30";
+  var zao = "4:00";
+  var wu =  "11:30";
+  var wan = "20:30";
+
+  var xuan = getDate(time + " 00:00:00").getTime();
+  var xian = getDate().getTime();
+  var h = getDate(xian).getHours();
+  var f = getDate(xian).getMinutes();
+  if (xian - xuan > 86399000){
+    return [false,true];
+  } else if (xian - xuan<0){
+      return [false, false];
+  }else{
+    if (sortTime(h, f, zao)){
+        return [false, false]
+    } else if (!sortTime(h, f, zao) && sortTime(h, f, wu)){
+        if(type==0){
+          return [false, true];
+        }else{
+          return [false,false];
+        }
+    } else if (!sortTime(h, f, wu) && sortTime(h, f, wan)) {
+        if (type == 2) {
+          return [false, false];
+        } else {
+          return [false, true];
+        }
+    } else if (!sortTime(h, f, wan)){
+        return [false,true];
+    }
+  }
+}
+/**
+ * 比时间
+ */
+function sortTime(h, f,time2){
+  var arr = time2.split(":");
+  if(h<arr[0]){
+    return true;
+  }else if(h==arr[0]){
+    if(f<arr[1]){
+      return true;
+    }else{
+      return false;
+    }
+  }else{
+    return false;
+  }
+  return arr[0];
+}
+/**
+ * 加法
+ */
+function formatFloat(f, digit){
+  var m = Math.pow(10, digit);
+  var num = Math.round(f * m) / m;
+  return num;
+}
+/**
+ *搜索文字，当前分类名称
+ */
+function search(txt,str){
+  if(txt==""||txt==null){
+    return true;
+  }else{
+    console.log(txt);
+    txt = txt.split("");
+    for (var i = 0; i < txt.length; i++) {
+      if (str.indexOf(txt[i]) == -1){
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+module.exports = {
+  conData: conData,
+  mergeString: mergeString,
+  checkTime: checkTime,
+  totalPrice: totalPrice,
+  timer: timer,
+  search: search,
+  filter: function (num) {
+    return parseFloat(num.toFixed(2));
+  }
+}

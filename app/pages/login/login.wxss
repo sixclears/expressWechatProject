@@ -1,0 +1,64 @@
+/**index.wxss**/
+
+page {
+    background-color: rgba(0, 0, 0, 0.3);
+  } 
+  .bg{
+    background: rgb(252, 252, 252);
+    margin: 250rpx 50rpx 50rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
+  }
+  .t1,.t2{
+    text-align: center;
+  }
+  .t1{
+    font-weight: bolder;
+    font-size: 35rpx;
+  }
+  .name{
+    text-align: center;
+  }
+  .t1>text{
+    padding:30rpx 20rpx;
+    border-bottom: 1rpx #000 solid;
+  }
+  .t2{
+    font-size: 25rpx;
+    margin-top: 40rpx;
+    padding:20rpx 20rpx;
+    color: rgb(151, 151, 151);
+  }
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .icof{
+    margin: 60rpx auto;
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .wxico{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .userbtn{
+    background-color: gold;
+    width: 300rpx;
+    height: 80rpx;
+    font-size: 34rpx;
+    margin-top: 50rpx;
+  }
+  .t3{
+    text-align: conter;
+    color: gold;
+    font-size: 30rpx;
+    width: 340rpx;
+    margin: 0rpx auto;
+    font-weight: bolder;
+  }

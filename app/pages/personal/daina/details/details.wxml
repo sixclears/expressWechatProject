@@ -1,0 +1,43 @@
+<!--pages/details/details.wxml-->
+<view class='main'>
+  <view class='finishInfo'>
+    <view class='finishInfo_left'>
+      <view class='bianhao'>
+        <image class='numPic' src='../../../../images/package.png'></image>
+        <view class='num'>物流编号{{order.expressNumber}}</view>
+      </view>
+      <view class='time'>佣金:{{order.salary}}元</view>  
+    </view>
+  </view>
+  <view class='remarks'>
+    <view class='list'>
+      <view class='list_name'>备注信息</view>
+      <view class='list_items'>
+        {{order.tip}}
+      </view>
+    </view>
+  </view>
+  <!-- 寄件人 -->
+  <view class='jijian {{displays?"none":"show"}}'>
+    <view class='lists'>
+      <view class='list_name'>物流公司</view>
+      <view class='list_item'>{{order.expressType}}</view>
+    </view>
+    <view class='lists'>
+      <view class='list_name'>驿站地址</view>
+      <view class='list_item'>{{order.address}}</view>
+    </view>
+     <view class='lists'>
+      <view class='list_name'>收件地址</view>
+      <view class='list_item'>{{order.myAddress}}</view>
+    </view>
+    <view class='lists'>
+      <view class='list_name'>收件件人姓名</view>
+      <view class='list_item'>{{order.name}}</view>
+    </view>
+    <view class='lists'>
+      <view class='list_name'>联系方式</view>
+      <view class='list_item'>{{order.tel}}</view>
+    </view>
+  </view>
+</view>

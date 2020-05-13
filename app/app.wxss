@@ -1,0 +1,16 @@
+
+/**引入其他wxss文件到全局的wxss文件**/
+@import "enhancewxss/main.wxss";
+@import "enhancewxss/icon.wxss";
+@import "enhancewxss/otherIcon.wxss";
+@import "enhancewxss/renminbi.wxss";
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
