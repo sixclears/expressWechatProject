@@ -10,7 +10,7 @@ spring:
 
 wechat:
  mini-app:
-  app-id: wx64d75acc798acb22
+  app-id: #######
   app-secret: 462e1d5fe78d11766403f047bab08e80
 mybatis:
   config-location: classpath:mytbatis/mybatis.xml
