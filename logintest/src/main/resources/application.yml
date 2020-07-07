@@ -1,11 +1,11 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: pwd3306
-    url: jdbc:mysql://121.43.227.147/bysl
+    username: ######
+    password: ######
+    url: #####jdbc:mysql://121.43.227.147/bysl
   redis:
-    host: 121.43.227.147
+    host: ####
 
 
 wechat:
