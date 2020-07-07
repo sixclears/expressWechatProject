@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ######
     password: ######
-    url: #####jdbc:mysql://121.43.227.147/bysl
+    url: #####
   redis:
     host: ####
 
@@ -11,7 +11,7 @@ spring:
 wechat:
  mini-app:
   app-id: #######
-  app-secret: 462e1d5fe78d11766403f047bab08e80
+  app-secret: #####
 mybatis:
   config-location: classpath:mytbatis/mybatis.xml
   mapper-locations: classpath:mytbatis/DainaMapper.xml
